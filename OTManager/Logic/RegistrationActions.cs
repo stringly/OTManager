@@ -29,6 +29,27 @@ namespace OTManager.Logic
             }
         }
 
+        public void RemoveRegistration(int removeID)
+        {
+            using (var _db = new EventContext())
+            {
+                try
+                {
+                    var regToRemove = (from c in _db.Registrations where c.RegistrationID == removeID select c).FirstOrDefault();
+                    if (regToRemove != null)
+                    {
+                        //Remove registration
+                        _db.Registrations.Remove(regToRemove);
+                        _db.SaveChanges();
+                    }
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Error: Unable to remove registration - " + e.Message.ToString(), e);
+                }
+            }
+        }
+
         public void Dispose()
         {
             if (_db != null)
