@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using OTManager.Models;
 using System.Data.Entity;
+using OTManager.Logic;
 
 namespace OTManager
 {
@@ -14,6 +15,13 @@ namespace OTManager
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        public List<OTManager.Models.Registration> GetUserRegistrations()
+        {
+            RegistrationActions ra = new Logic.RegistrationActions();
+            return ra.GetRegistrations();
+           
         }
 
         //public IQueryable<Registration> userRegistrationsGrid_GetData()

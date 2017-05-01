@@ -113,7 +113,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Logic\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
@@ -220,6 +219,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\RegistrationActions.cs" />
     <Compile Include="Migrations\201704270355187_InitialCreate.cs" />
     <Compile Include="Migrations\201704270355187_InitialCreate.Designer.cs">
       <DependentUpon>201704270355187_InitialCreate.cs</DependentUpon>

@@ -21,7 +21,7 @@ namespace OTManager
                 string nameWithoutDomain = User.Identity.Name.Substring(User.Identity.Name.LastIndexOf(@"\") + 1);
                 using (var _db = new OTManager.Models.EventContext())                    
                 {
-                    var webuser = _db.WebUsers.First(x => x.LDAPName == nameWithoutDomain);                
+                    var webuser = _db.WebUsers.FirstOrDefault(x => x.LDAPName == nameWithoutDomain);                
 
 
 
