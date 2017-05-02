@@ -19,7 +19,7 @@ namespace OTManager.Logic
             
         }
 
-        private int GetUserID()
+        public int GetUserID()
         {
             string nameWithoutDomain = HttpContext.Current.User.Identity.Name.Substring(HttpContext.Current.User.Identity.Name.LastIndexOf(@"\") + 1);
             using (var x = new OTManager.Models.EventContext())
@@ -27,6 +27,30 @@ namespace OTManager.Logic
                 return x.WebUsers.FirstOrDefault(u => u.LDAPName == nameWithoutDomain).WebUserID;
                 
             }
+        }
+
+        public WebUser GetCurrentUser()
+        {
+            string nameWithoutDomain = HttpContext.Current.User.Identity.Name.Substring(HttpContext.Current.User.Identity.Name.LastIndexOf(@"\") + 1);
+            using (var x = new EventContext())
+            {
+                return x.WebUsers.FirstOrDefault(u => u.LDAPName == nameWithoutDomain);
+            }
+        }
+
+        /// <summary>
+        /// Function to add select Registration to database *INCOMPLETE*
+        /// </summary>
+        /// <param name="ID"></param>
+        public void AddRegistration(int ID)
+        {
+            WebUser user = GetCurrentUser();
+            var eventToAdd = _db.Events.SingleOrDefault(c => c.EventID == ID);
+            if (eventToAdd != null)
+            {
+
+            }
+
         }
 
         public void RemoveRegistration(int removeID)

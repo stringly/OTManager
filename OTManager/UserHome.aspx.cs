@@ -24,10 +24,17 @@ namespace OTManager
            
         }
 
+        protected void Delete_Command(object sender, CommandEventArgs e)
+        {
+            int ID = Int32.Parse(e.CommandArgument.ToString());
+            RegistrationActions ra = new Logic.RegistrationActions();
+            ra.RemoveRegistration(ID);
+        }
+
         //public IQueryable<Registration> userRegistrationsGrid_GetData()
         //{
         //    public User user = new Models.User();
-         
+
         //    EventContext _db = new EventContext();
         //    var query = _db.Registrations.Include(r => r.UserID)
         //}
