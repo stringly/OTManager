@@ -11,6 +11,13 @@ namespace OTManager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string nameWithoutDomain = User.Identity.Name.Substring(User.Identity.Name.LastIndexOf(@"\") + 1);
+            userName.Text = "Welcome, " + nameWithoutDomain + ".";
+
+        }
+
+        protected void Register_Click(object sender, EventArgs e)
+        {
 
         }
     }
