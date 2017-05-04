@@ -55,6 +55,7 @@
                         <li><a runat="server" href="~/Registrations">My Registrations</a></li>
                         <li><a runat="server" href="~/About">About</a></li>
                         <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li id="MyInfo" runat="server"><a runat="server" href="~/EditRegistration">My Info</a></li>
                     </ul>
                     <p class="nav navbar-text navbar-right">Hello, <asp:LoginName runat="server" />!</p>
                 </div>

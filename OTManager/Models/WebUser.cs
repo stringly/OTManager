@@ -27,6 +27,9 @@ namespace OTManager.Models
         [Required, StringLength(20)]
         public string LastName { get; set; }
 
+        [Required]
+        public string Rank { get; set; }
+
         [Required, StringLength(50), DataType(DataType.EmailAddress, ErrorMessage = "Please enter a valid email address.")]
         public string Email { get; set; }
 

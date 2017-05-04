@@ -1,12 +1,12 @@
-﻿<%@ Page Title="Registration" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="OTManager.Registration" %>
-<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-        <h1><%: Title %></h1>
+﻿<%@ Page Title="Edit User Info" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EditRegistration.aspx.cs" Inherits="OTManager.EditRegistration" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <h1><%: Title %></h1>
     <div class="row">
         <div class="col-md-8">
             <section id="loginForm">
                 <div class="form-horizontal">
                     <asp:Label ID="userName" runat="server" />
-                    <h4>Please provide the following information to register and use this application.</h4> 
+                    <h4>Please edit any fields that need to be updated.</h4> 
                     <hr />
                     <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
                         <p class="text-danger">
@@ -74,7 +74,7 @@
                     </div> -->
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <asp:Button runat="server" OnClick="Register_Click" Text="Register" CssClass="btn btn-default" />
+                            <asp:Button runat="server" OnClick="Update_Click" Text="Update" CssClass="btn btn-default" />
                         </div>
                     </div>
                 </div>
@@ -86,4 +86,3 @@
         </div>
     </div>
 </asp:Content>
-

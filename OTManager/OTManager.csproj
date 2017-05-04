@@ -122,6 +122,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="EditRegistration.aspx" />
     <Content Include="EventDetails.aspx" />
     <Content Include="EventList.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -202,6 +203,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="EditRegistration.aspx.cs">
+      <DependentUpon>EditRegistration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditRegistration.aspx.designer.cs">
+      <DependentUpon>EditRegistration.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EventDetails.aspx.cs">
       <DependentUpon>EventDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -219,6 +227,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logic\CurrentUser.cs" />
     <Compile Include="Logic\RegistrationActions.cs" />
     <Compile Include="Migrations\201704270355187_InitialCreate.cs" />
     <Compile Include="Migrations\201704270355187_InitialCreate.Designer.cs">
@@ -247,6 +256,10 @@
     <Compile Include="Migrations\201704300002008_Users to WebUsers.cs" />
     <Compile Include="Migrations\201704300002008_Users to WebUsers.Designer.cs">
       <DependentUpon>201704300002008_Users to WebUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705032207125_Add rank to Webuser model.cs" />
+    <Compile Include="Migrations\201705032207125_Add rank to Webuser model.Designer.cs">
+      <DependentUpon>201705032207125_Add rank to Webuser model.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\EventContext.cs" />
@@ -312,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201704300002008_Users to WebUsers.resx">
       <DependentUpon>201704300002008_Users to WebUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705032207125_Add rank to Webuser model.resx">
+      <DependentUpon>201705032207125_Add rank to Webuser model.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -14,44 +14,26 @@ namespace OTManager.Logic
 
         public List<OTManager.Models.Registration> GetRegistrations()
         {
-            int u = GetUserID();
+            //int u = GetUserID();
+            int u = (Int32)HttpContext.Current.Session["currentUserID"];
             return _db.Registrations.Where(c => c.UserID == u).ToList();
             
         }
 
-        public int GetUserID()
-        {
-            string nameWithoutDomain = HttpContext.Current.User.Identity.Name.Substring(HttpContext.Current.User.Identity.Name.LastIndexOf(@"\") + 1);
-            using (var x = new OTManager.Models.EventContext())
-            {
-                return x.WebUsers.FirstOrDefault(u => u.LDAPName == nameWithoutDomain).WebUserID;
-                
-            }
-        }
+        ///// <summary>
+        ///// Function to add select Registration to database *INCOMPLETE*
+        ///// </summary>
+        ///// <param name="ID"></param>
+        //public void AddRegistration(int ID)
+        //{
+        //    WebUser user = GetCurrentUser();
+        //    var eventToAdd = _db.Events.SingleOrDefault(c => c.EventID == ID);
+        //    if (eventToAdd != null)
+        //    {
 
-        public WebUser GetCurrentUser()
-        {
-            string nameWithoutDomain = HttpContext.Current.User.Identity.Name.Substring(HttpContext.Current.User.Identity.Name.LastIndexOf(@"\") + 1);
-            using (var x = new EventContext())
-            {
-                return x.WebUsers.FirstOrDefault(u => u.LDAPName == nameWithoutDomain);
-            }
-        }
+        //    }
 
-        /// <summary>
-        /// Function to add select Registration to database *INCOMPLETE*
-        /// </summary>
-        /// <param name="ID"></param>
-        public void AddRegistration(int ID)
-        {
-            WebUser user = GetCurrentUser();
-            var eventToAdd = _db.Events.SingleOrDefault(c => c.EventID == ID);
-            if (eventToAdd != null)
-            {
-
-            }
-
-        }
+        //}
 
         public void RemoveRegistration(int removeID)
         {

@@ -14,6 +14,8 @@ namespace OTManager
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Master.FindControl("MyInfo").Visible = true;
+
 
         }
 
@@ -30,6 +32,8 @@ namespace OTManager
             RegistrationActions ra = new Logic.RegistrationActions();
             ra.RemoveRegistration(ID);
         }
+
+
 
         //public IQueryable<Registration> userRegistrationsGrid_GetData()
         //{

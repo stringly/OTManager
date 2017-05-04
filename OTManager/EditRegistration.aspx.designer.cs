@@ -10,7 +10,7 @@
 namespace OTManager {
     
     
-    public partial class Registration {
+    public partial class EditRegistration {
         
         /// <summary>
         /// userName control.

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data.Entity;
 using System.Web.ModelBinding;
 using OTManager.Models;
+using OTManager.Logic;
 using System.Diagnostics;
 
 
@@ -21,13 +22,13 @@ namespace OTManager
                 string nameWithoutDomain = User.Identity.Name.Substring(User.Identity.Name.LastIndexOf(@"\") + 1);
                 using (var _db = new OTManager.Models.EventContext())                    
                 {
-                    var webuser = _db.WebUsers.FirstOrDefault(x => x.LDAPName == nameWithoutDomain);                
-
-
-
+                    var webuser = _db.WebUsers.FirstOrDefault(x => x.LDAPName == nameWithoutDomain);  
                     if (webuser != null)
                     {
                         Debug.WriteLine("User First name is: " + webuser.FirstName);
+                        // Set session variables
+                        var cu = new CurrentUser();
+                        cu.SetSession(webuser);
                         // Load Home Page
                         Response.Redirect("~/UserHome.aspx");
                     }

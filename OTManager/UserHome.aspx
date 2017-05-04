@@ -11,7 +11,7 @@
         <asp:BoundField DataField="Event.EndTime" HeaderText="End Time"/>     
         <asp:TemplateField HeaderText="Delete Registration">            
                 <ItemTemplate>
-                    <asp:Button id="Delete" runat="server" Text="Delete" CausesValidation="false" OnCommand="Delete_Command" CommandArgument='<%# Eval("RegistrationID") %>'></asp:Button>
+                    <asp:Button id="Delete" runat="server" Text="Delete" CausesValidation="false" OnCommand="Delete_Command" CssClass="btn btn-default" CommandArgument='<%# Eval("RegistrationID") %>'></asp:Button>
                 </ItemTemplate>        
         </asp:TemplateField>    
         </Columns>    
