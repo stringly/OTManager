@@ -30,11 +30,18 @@ namespace OTManager.Models
         [Display(Name = "Supervisor Staffing")]
         public int? SuperStaff { get; set; }
 
+        [Required, Display(Name = "Confirmed Staff")]
+        public int? ConfirmedStaff { get; set; }
+
         [Required, Display(Name = "Fund Center")]
         public string FundCenter { get; set; }
 
         [Required, Display(Name = "LocationCode")]
         public string LocationCode { get; set; }
+
+        // Active, InActive
+        [Required, Display(Name = "Status")]
+        public string Status { get; set; }
 
         // Add Contact Information for Event point-of-contact
 

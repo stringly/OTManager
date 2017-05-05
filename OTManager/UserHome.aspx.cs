@@ -31,6 +31,8 @@ namespace OTManager
             int ID = Int32.Parse(e.CommandArgument.ToString());
             RegistrationActions ra = new Logic.RegistrationActions();
             ra.RemoveRegistration(ID);
+            //((Label)Master.FindControl("LabelID")).Text = "Successfully deleted registration.";
+            Response.Redirect("~/UserHome.aspx");
         }
 
 

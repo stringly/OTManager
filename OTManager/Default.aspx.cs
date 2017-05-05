@@ -35,7 +35,7 @@ namespace OTManager
                     else
                     {
                         // Load Registration Page
-                        Response.Redirect("~/Registration.aspx");
+                        Response.Redirect("~/RegistrationPage.aspx");
                     }
                 }
             }

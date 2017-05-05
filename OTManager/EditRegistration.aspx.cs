@@ -28,7 +28,6 @@ namespace OTManager
 
         protected void Update_Click(object sender, EventArgs e)
         {
-            //TestFormInfo();
             using (var _db = new EventContext())
             {
                 int ID = (int)Session["currentUserID"];
@@ -50,46 +49,7 @@ namespace OTManager
                     }
                 }
             }
-
             Response.Redirect("~/UserHome.aspx");
         }
-
-        //private List<string> GetChangedItems()
-        //{
-        //    List<string> changed = new List<string>();
-
-        //    if (Email.Text != (string)Session["currentUserEmail"])
-        //    {
-        //        changed.Add("Email");
-        //    }
-        //    if (Rank_List.Text != (string)Session["currentUserRank"])
-        //    {
-        //        changed.Add("Rank");
-        //    }
-        //    if (First_Name.Text != (string)Session["currentUserFirstName"])
-        //    {
-        //        changed.Add("FirstName");
-        //    }
-        //    if (Last_Name.Text != (string)Session["currentUserLastName"])
-        //    {
-        //        changed.Add("LastName");
-        //    }
-        //    if (ID_Number.Text != (string)Session["currentUserBadgeNumber"])
-        //    {
-        //        changed.Add("BadgeNumber");
-        //    }
-        //    if (Phone.Text != (string)Session["currentUserPhone"])
-        //    {
-        //        changed.Add("Phone");
-        //    }
-        //    Debug.WriteLine("Detected " + changed.Count + " changes on the form.");
-        //    return changed;
-        //}
-
-        //private void TestFormInfo()
-        //{
-        //    Debug.WriteLine("Email is: " + Email.Text);
-        //    Debug.WriteLine("Session email is: " + (string)Session["currentUserEmail"]);
-        //}
     }
 }
