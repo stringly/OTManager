@@ -13,5 +13,15 @@ namespace OTManager.Admin
         {
 
         }
+
+        protected void DateValidate(object sender, ServerValidateEventArgs e)
+        {
+            e.IsValid = (Convert.ToDateTime(StartDate.Text) < Convert.ToDateTime(EndDate.Text));
+        }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/UserHome.aspx");
+        }
     }
 }

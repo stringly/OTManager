@@ -259,6 +259,7 @@ td, th {
 
     .label {
         border: 1px solid #000;
+        font-weight: normal !important;
     }
 
     .table {
@@ -1571,7 +1572,7 @@ mark, .mark {
 }
 
 .text-primary {
-    color: #7a8288;
+    color: #c8c8c8;
 }
 
 a.text-primary:hover, a.text-primary:focus {

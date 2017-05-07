@@ -25,5 +25,7 @@ namespace OTManager.Models
 
         public virtual WebUser WebUser { get; set; }
 
+        public bool Confirmed { get; set; }
+
     }
 }
